@@ -43,3 +43,7 @@ for (let i = 0; i < planets.length; i++) {
     planetDiv.appendChild(moonDiv);
   }
 }
+
+// ====== Daily Challenge 2 ======
+
+// ----------- Words in the stars -------------
