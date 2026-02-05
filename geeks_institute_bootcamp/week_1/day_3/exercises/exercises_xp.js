@@ -1,9 +1,15 @@
-// ===== Exercise 1
+// ===== Exercise 1 =====
 
-// ===== Exercise 2
+// ----------- Change the article -------------
 
-// ===== Exercise 3
+// ===== Exercise 2 =====
 
-// ===== Exercise 4
+// ----------- Work with forms -------------
 
-// ===== Exercise ...
+// ===== Exercise 3 =====
+
+// ----------- Transform the sentence -------------
+
+// ===== Exercise 4 =====
+
+// ----------- Volume of a sphere -------------

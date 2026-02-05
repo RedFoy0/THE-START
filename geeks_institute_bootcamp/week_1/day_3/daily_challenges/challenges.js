@@ -1,5 +1,7 @@
-// ====== Daily Challenge 1
+// ====== Daily Challenge 1 ======
 
-// ====== Daily Challenge 2
+// ----------- Tell the story -------------
 
-// ====== Daily Challenge 3
+// ====== Daily Challenge 2 ======
+
+// ----------- Letters -------------

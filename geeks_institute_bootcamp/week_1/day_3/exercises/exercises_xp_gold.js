@@ -1,9 +1,11 @@
-// ===== Exercise 1
+// ===== Exercise 1 =====
 
-// ===== Exercise 2
+// ----------- Select a kind of Music -------------
 
-// ===== Exercise 3
+// ===== Exercise 2 =====
 
-// ===== Exercise 4
+// ----------- Delete colors -------------
 
-// ===== Exercise ...
+// ===== Exercise 3 =====
+
+// ----------- Create a shopping list -------------
