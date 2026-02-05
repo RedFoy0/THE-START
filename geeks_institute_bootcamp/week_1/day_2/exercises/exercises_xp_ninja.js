@@ -49,9 +49,46 @@ console.log(isPalindrome("hello"));
 
 // ----------- Biggest Number -------------
 
+function biggestNumberInArray(arrayNumber) {
+  let max = 0;
+
+  for (let i = 0; i < arrayNumber.length; i++) {
+    if (typeof arrayNumber[i] === "number") {
+      if (arrayNumber[i] > max) {
+        max = arrayNumber[i];
+      }
+    }
+  }
+
+  return max;
+}
+
+// const array1 = [-1, 0, 3, 100, 99, 2, 99];
+// console.log(biggestNumberInArray(array1));
+
+// const array2 = ['a', 3, 4, 2];
+// console.log(biggestNumberInArray(array2));
+
+// const array3 = [];
+// console.log(biggestNumberInArray(array3));
+
 // ===== Exercise 5 =====
 
 // ----------- Unique Elements -------------
+
+function uniqueElements(arr) {
+  let newList = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!newList.includes(arr[i])) {
+      newList.push(arr[i]);
+    }
+  }
+
+  return newList;
+}
+// console.log(uniqueElements([1, 2, 3, 3, 3, 4, 5]));
+// console.log(uniqueElements([1, 2, 3, 3, 3, 3, 4, 5]));
 
 // ===== Exercise 6 =====
 
