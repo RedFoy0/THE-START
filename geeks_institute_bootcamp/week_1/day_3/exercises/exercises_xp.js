@@ -58,6 +58,29 @@ console.log (randomNum)
 
 // ----------- Transform the sentence -------------
 
+let allBoldItems;
+
+function getBoldItems() {
+  allBoldItems = document.getElementsByTagName("strong");
+}
+
+function highlight() {
+    getBoldItems()
+  for (let i = 0; i < allBoldItems.length; i++) {
+    allBoldItems[i].style.color = "blue";
+  }
+}
+
+function returnItemsToDefault() {
+  for (let i = 0; i < allBoldItems.length; i++) {
+    allBoldItems[i].style.color = "black";
+  }
+}
+
+let paragraphs = document.getElementsByTagName("p")[0];
+paragraphs.addEventListener("mouseover",highlight)
+paragraphs.addEventListener("mouseout",returnItemsToDefault)
+
 // ===== Exercise 4 =====
 
 // ----------- Volume of a sphere -------------
