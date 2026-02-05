@@ -93,3 +93,62 @@ function uniqueElements(arr) {
 // ===== Exercise 6 =====
 
 // ----------- Calendar -------------
+
+function createCalendar(year, month) {
+  const monthinsdex = month - 1;
+
+  const weekdays = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
+
+  const table = document.createElement("table");
+  table.style.borderCollapse = "collapse";
+
+  const headRow = document.createElement("tr");
+  for (let i = 0; i < weekdays.length; i++) {
+    const th = document.createElement("th");
+    th.textContent = weekdays[i];
+    th.style.border = "1px solid #ccc";
+    th.style.padding = "8px";
+    th.style.backgroundColor = " rgba(255, 229, 229, 0.82)";
+    headRow.appendChild(th);
+  }
+  table.appendChild(headRow);
+
+  function mondayFirstIndex(jsDay) {
+    return (jsDay + 6) % 7;
+  }
+
+  const firstDay = new Date(year, monthinsdex, 1);
+  const startIndex = mondayFirstIndex(firstDay.getDay());
+  const lastDate = new Date(year, monthinsdex + 1, 0).getDate();
+
+  let day = 1;
+
+  while (day <= lastDate) {
+    const tr = document.createElement("tr");
+
+    for (let col = 0; col < 7; col++) {
+      const td = document.createElement("td");
+      td.style.border = "1px solid #ccc";
+      td.style.padding = "8px";
+      td.style.textAlign = "center";
+      td.style.width = "40px";
+      td.style.height = "30px";
+
+      if ((day === 1 && col < startIndex) || day > lastDate) {
+        td.textContent = "";
+      } else {
+        td.textContent = day;
+        day++;
+      }
+
+      tr.appendChild(td);
+    }
+
+    table.appendChild(tr);
+  }
+
+  document.body.appendChild(table);
+}
+
+// example
+createCalendar(2012, 9);
