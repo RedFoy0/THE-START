@@ -55,3 +55,13 @@ function goll9isa(e) {
 // ====== Daily Challenge 2 ======
 
 // ----------- Letters -------------
+
+const input = document.createElement("input");
+input.type = "text";
+input.placeholder = "Write letters only";
+
+document.body.appendChild(input);
+
+input.addEventListener("input", function () {
+  this.value = this.value.replace(/[^a-zA-Z]/g, "");
+});
