@@ -52,7 +52,6 @@ function addItem(e) {
   renderList();
 }
 
-// clear all
 function clearAll() {
   shoppingList = [];
   renderList();
