@@ -15,6 +15,20 @@ classic.selected = true;
 
 // ----------- Delete colors -------------
 
+const select = document.getElementById("colorSelect");
+const btn = document.querySelector('input[type="button"]');
+
+btn.addEventListener("click", removeColor);
+
+function removeColor() {
+  const selectedIndex = select.selectedIndex;
+
+  if (selectedIndex !== -1) {
+    select.remove(selectedIndex);
+  }
+}
+
+
 // ===== Exercise 3 =====
 
 // ----------- Create a shopping list -------------
