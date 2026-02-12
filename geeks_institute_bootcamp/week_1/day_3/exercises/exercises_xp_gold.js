@@ -2,12 +2,12 @@
 
 // ----------- Select a kind of Music -------------
 
-let select = document.getElementById("genres");
-console.log(select.value);
+let select1 = document.getElementById("genres");
+console.log(select1.value);
 
 let classic = document.createElement("option");
 classic.textContent = "Classic";
-select.appendChild(classic);
+select1.appendChild(classic);
 document.createAttribute("value", classic);
 classic.selected = true;
 
