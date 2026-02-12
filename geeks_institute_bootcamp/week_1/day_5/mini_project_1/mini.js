@@ -16,8 +16,6 @@ const colors = document.querySelectorAll(".color");
 for (let i = 0; i < colors.length; i++) {
   colors[i].addEventListener("click", function () {
     selectedColor = this.style.backgroundColor;
-
-    console.log("Selected:", selectedColor);
   });
 }
 
@@ -46,7 +44,6 @@ const ClrBtn = document.getElementById("clearBtn");
 
 ClrBtn.addEventListener("click", clear);
 function clear() {
-  console.log("reda");
   for (let i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = "white";
   }
