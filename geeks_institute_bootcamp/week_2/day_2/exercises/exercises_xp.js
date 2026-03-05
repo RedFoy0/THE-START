@@ -1,174 +1,121 @@
 // // ===== Exercise 1 =====
 
-// // ------------- Scope -------------
+// // ------------- Colors -------------
 
-// // #1
-// function funcOne() {
-//     let a = 5;
-//     if(a > 1) {
-//         a = 3;
-//     }
-//     alert(`inside the funcOne function ${a}`); // aytl3 alert fih inside the funcOne function 3
-// }
+const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 
-// // #1.1 - run in the console:
-// funcOne()
-// // #1.2 What will happen if the variable is declared 
-// // with const instead of let ?        // aytl3 error 
+colors.forEach((color, index) => {
+    console.log(`${index + 1}# choice is ${color}.`);
+});
 
-
-// //#2
-// let a = 0;
-// function funcTwo() {
-//     a = 5;
-// }
-
-// function funcThree() {
-//     alert(`inside the funcThree function ${a}`);
-// }
-
-// // #2.1 - run in the console:
-// funcThree()
-// funcTwo()
-// funcThree()
-// // #2.2 What will happen if the variable is declared 
-// // with const instead of let ?
-
-
-// //#3
-// function funcFour() {
-//     window.a = "hello";
-// }
-
-
-// function funcFive() {
-//     alert(`inside the funcFive function ${a}`);
-// }
-
-// // #3.1 - run in the console:
-// funcFour()
-// funcFive()
-
-// //#4
-// let a = 1;
-// function funcSix() {
-//     let a = "test";
-//     alert(`inside the funcSix function ${a}`);
-// }
-
-
-// // #4.1 - run in the console:
-// funcSix()
-// // #4.2 What will happen if the variable is declared 
-// // with const instead of let ?
-
-// //#5
-// let a = 2;
-// if (true) {
-//     let a = 5;
-//     alert(`in the if block ${a}`);
-// }
-// alert(`outside of the if block ${a}`);
-
-// // #5.1 - run the code in the console
-// // #5.2 What will happen if the variable is declared 
-// // with const instead of let ?
-
-
-
+if (colors.includes("Violet")) {
+    console.log("Yeah");
+} else {
+    console.log("No...");
+}
 
 // ===== Exercise 2 =====
 
-// ------------- Ternary operator -------------
+// ------------- Colors #2 -------------
 
-function winBattle(){
-    return true;
-}
+const colorss = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+const ordinal = ["th", "st", "nd", "rd"];
 
-// Transform the winBattle() function to an arrow function.
+colorss.forEach((color, index) => {
+    let position = index + 1;
 
-const winBattle = () => true;
+    let suffix =
+    position === 1 ? ordinal[1] :
+    position === 2 ? ordinal[2] :
+    position === 3 ? ordinal[3] :
+    ordinal[0];
 
-// Create a variable called experiencePoints.
-
-let experiencePoints;
-
-// Assign to this variable
-
-experiencePoints = winBattle() ? 10 : 1;
-
-// Console.log the experiencePoints variable.
-
-console.log(experiencePoints);
-
-
+    console.log(`${position}${suffix} choice is ${color}.`);
+});
 
 // ===== Exercise 3 =====
 
-// ----------- Is it a string ? -------------
+// ----------- Analyzing -------------
 
-const isString = (value) => typeof value === "string";
+const fruits = ["apple", "orange"];
+const vegetables = ["carrot", "potato"];
 
-console.log(isString('hello')); 
-console.log(isString([1, 2, 4, 0]));
+const result = ['bread', ...vegetables, 'chicken', ...fruits];
+console.log(result);
+// output:
+// ["bread", "carrot", "potato", "chicken", "apple", "orange"]
 
+const country = "USA";
+console.log([...country]);
+// output:
+// ["U", "S", "A"]
+
+
+let newArray = [...[,,]];
+console.log(newArray);
+//output:
+// [undefined, undefined]
 
 // ===== Exercise 4 =====
 
-// ----------- Find the sum -------------
+// ----------- Employees -------------
 
-const sum = (a, b) => a + b;
+const users = [
+  { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
+  { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
+  { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
+  { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
+  { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
+  { firstName: 'Wes', lastName: 'Reid', role: 'Instructor' },
+  { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor' }
+];
+
+
+const welcomeStudents = users.map(user => `Hello ${user.firstName}`);
+console.log(welcomeStudents);
+
+
+const fullStackResidents = users.filter(
+  user => user.role === 'Full Stack Resident'
+);
+console.log(fullStackResidents);
+
+
+const residentLastNames = users
+  .filter(user => user.role === 'Full Stack Resident')
+  .map(user => user.lastName);
+
+console.log(residentLastNames);
 
 
 // ===== Exercise 5 =====
 
-// ----------- Kg and grams -------------
+// ----------- Star Wars -------------
 
-// function declaration
+const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
 
-function kgToGrams(kg){
-  return kg * 1000;
-}
-
-console.log(kgToGrams(2)); 
-
-// function expression
-
-const kgToGrams2 = function(kg){
-  return kg * 1000;
-}
-
-console.log(kgToGrams2(3));
-
-// Function declaration t9dr t5dm biha 9bl matktbha , function expression 5asha tktb 9bl matst3mlha
-
-// one line arrow function
-
-const kgToGrams3 = kg => kg * 1000;
-console.log(kgToGrams3(5));
-
+const sentence = epic.reduce((acc, word) => acc + ' ' + word);
+console.log(sentence);
 
 // ===== Exercise 6 =====
 
-// ----------- Fortune teller -------------
+// ----------- Employees #2 -------------
 
-(function(children, partner, location, job){
-
-  document.body.innerHTML =
-  `You will be a ${job} in ${location}, and married to ${partner} with ${children} kids.`;
-
-})(3, "Sara", "Tokyo", "Designer");
-
-
-// ===== Exercise 7 =====
-
-// ----------- Welcome -------------
+const students = [
+  {name: "Ray", course: "Computer Science", isPassed: true}, 
+  {name: "Liam", course: "Computer Science", isPassed: false}, 
+  {name: "Jenner", course: "Information Technology", isPassed: true}, 
+  {name: "Marco", course: "Robotics", isPassed: true}, 
+  {name: "Kimberly", course: "Artificial Intelligence", isPassed: false}, 
+  {name: "Jamie", course: "Big Data", isPassed: false}
+];
 
 
-// ===== Exercise 8 =====
+const passedStudents = students.filter(student => student.isPassed);
+console.log(passedStudents);
 
-// ----------- Juice Bar -------------
-
-// Part I ----------
-
-// Part II ----------
+students
+  .filter(student => student.isPassed)
+  .forEach(student => {
+    console.log(`Good job ${student.name}, you passed the course in ${student.course}`);
+  });
