@@ -22,8 +22,6 @@
 
 //     <pre id="output"></pre>
 
-//     <script src="exercices_xp_ninja.js">
-
 //     </script>
 
 // </body>
