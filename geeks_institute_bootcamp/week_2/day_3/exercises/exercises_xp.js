@@ -1,121 +1,115 @@
 // // ===== Exercise 1 =====
 
-// // ------------- Colors -------------
+// // ------------- Location -------------
 
-const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
-
-colors.forEach((color, index) => {
-    console.log(`${index + 1}# choice is ${color}.`);
-});
-
-if (colors.includes("Violet")) {
-    console.log("Yeah");
-} else {
-    console.log("No...");
+const person = {
+    name: 'John Doe',
+    age: 25,
+    location: {
+        country: 'Canada',
+        city: 'Vancouver',
+        coordinates: [49.2827, -123.1207]
+    }
 }
+
+const { name, location: { country , city, coordinates: [lat, lng] } } = person;
+
+console.log(`I am ${name} from ${city}, ${country}. Latitude(${lat}), Longitude(${lng})`);
+
+// output 
+// I am John Doe from Vancouver, Canada. Latitude(49.2827), Longitude(-123.1207)
 
 // ===== Exercise 2 =====
 
-// ------------- Colors #2 -------------
+// ------------- Display Student Info -------------
 
-const colorss = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
-const ordinal = ["th", "st", "nd", "rd"];
+function displayStudentInfo(objUser) {
+    const { first, last } = objUser;
 
-colorss.forEach((color, index) => {
-    let position = index + 1;
+    return `Your full name is ${first} ${last}`;
+}
 
-    let suffix =
-    position === 1 ? ordinal[1] :
-    position === 2 ? ordinal[2] :
-    position === 3 ? ordinal[3] :
-    ordinal[0];
-
-    console.log(`${position}${suffix} choice is ${color}.`);
-});
+console.log(displayStudentInfo({ first: 'Elie', last: 'Schoppik' }));
 
 // ===== Exercise 3 =====
 
-// ----------- Analyzing -------------
+// ----------- User & id -------------
 
-const fruits = ["apple", "orange"];
-const vegetables = ["carrot", "potato"];
+// part 1
+const users = { user1: 18273, user2: 92833, user3: 90315 };
+const usersArray = Object.entries(users);
+console.log(usersArray);
 
-const result = ['bread', ...vegetables, 'chicken', ...fruits];
-console.log(result);
-// output:
-// ["bread", "carrot", "potato", "chicken", "apple", "orange"]
+const users2 = { user1: 18273, user2: 92833, user3: 90315 };
+const usersArray2 = Object.entries(users).map(([user, id]) => {
+    return [user, id * 2];
+});
+console.log(usersArray2)
 
-const country = "USA";
-console.log([...country]);
-// output:
-// ["U", "S", "A"]
-
-
-let newArray = [...[,,]];
-console.log(newArray);
-//output:
-// [undefined, undefined]
 
 // ===== Exercise 4 =====
 
-// ----------- Employees -------------
+// ----------- Person class -------------
 
-const users = [
-  { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
-  { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
-  { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
-  { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
-  { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
-  { firstName: 'Wes', lastName: 'Reid', role: 'Instructor' },
-  { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor' }
-];
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}
 
+const member = new Person('John');
+console.log(typeof member);
 
-const welcomeStudents = users.map(user => `Hello ${user.firstName}`);
-console.log(welcomeStudents);
-
-
-const fullStackResidents = users.filter(
-  user => user.role === 'Full Stack Resident'
-);
-console.log(fullStackResidents);
-
-
-const residentLastNames = users
-  .filter(user => user.role === 'Full Stack Resident')
-  .map(user => user.lastName);
-
-console.log(residentLastNames);
+// output
+// object
 
 
 // ===== Exercise 5 =====
 
-// ----------- Star Wars -------------
+// ----------- Dog class -------------
 
-const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
-
-const sentence = epic.reduce((acc, word) => acc + ' ' + word);
-console.log(sentence);
+class Labrador extends Dog {
+  constructor(name, size) {
+    super(name);
+    this.size = size;
+  }
+}
 
 // ===== Exercise 6 =====
 
-// ----------- Employees #2 -------------
+// ----------- Challenges -------------
 
-const students = [
-  {name: "Ray", course: "Computer Science", isPassed: true}, 
-  {name: "Liam", course: "Computer Science", isPassed: false}, 
-  {name: "Jenner", course: "Information Technology", isPassed: true}, 
-  {name: "Marco", course: "Robotics", isPassed: true}, 
-  {name: "Kimberly", course: "Artificial Intelligence", isPassed: false}, 
-  {name: "Jamie", course: "Big Data", isPassed: false}
-];
+// [2] === [2] false
+// {} === {} false 
 
 
-const passedStudents = students.filter(student => student.isPassed);
-console.log(passedStudents);
 
-students
-  .filter(student => student.isPassed)
-  .forEach(student => {
-    console.log(`Good job ${student.name}, you passed the course in ${student.course}`);
-  });
+const object1 = { number: 5 }; 
+const object2 = object1; 
+const object3 = object2; 
+const object4 = { number: 5 };
+
+object1.number = 4;
+
+console.log(object2.number); // 4
+console.log(object3.number); // 4
+console.log(object4.number); // 5
+
+
+class Animal {
+  constructor(name, type, color) {
+    this.name = name;
+    this.type = type;
+    this.color = color;
+  }
+}
+
+class Mammal extends Animal {
+  sound(sound) {
+    return `${sound} I'm a ${this.type}, named ${this.name} and I'm ${this.color}`;
+  }
+}
+
+const farmerCow = new Mammal("Lily", "cow", "brown and white");
+
+console.log(farmerCow.sound("Moooo"));
